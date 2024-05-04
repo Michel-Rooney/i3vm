@@ -39,10 +39,14 @@ contador = int(open(contador_path).read().strip())
 if contador < (len(players) - 1):
     contador += 1
 else:
-    if players[0] == players[contador]:
+    try:
+        if players[0] == players[contador]:
+            contador = 0
+        else:
+            contador = players.index(players[contador])
+    except IndexError:
         contador = 0
-    else:
-        contador = players.index(players[contador])
+        # subprocess.run(['notify-send', f'"{error}"'])
 
 with open(contador_path, 'w') as file:
     file.write(f'{contador}')

@@ -200,7 +200,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         # status_command i3status
-        tray_output HDMI-1
+        tray_output eDP-1
         status_command i3blocks
 }
 
@@ -220,7 +220,7 @@ bindsym Mod1+Tab focus next
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id blueman-manger
 # exec --no-startup-id xrandr --output HDMI-1 --mode 1360x768
-exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --primary --above eDP-1
+exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --above eDP-1
 
 hide_edge_borders both
 focus_follows_mouse no
